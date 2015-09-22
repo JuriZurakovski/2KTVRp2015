@@ -6,5 +6,8 @@
 </head>
 <body>
 	hi
+	<?php
+	echo ", rabotajet PHP!";
+	?>
 </body>
 </html>
