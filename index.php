@@ -1,30 +1,26 @@
 <?php
-echo "text1";
+
 	include_once 'Model/model.php';
 
 	$posts=get_all_posts();
-	echo "text2";
+	require "View/Templates/list.php";	
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-</head>
-<body>
-	
-	<h2>List of posts</h2>
-	<ul>
-		<?php
-			foreach ($posts as $post):
-		?>
-		<li>
-			<a href="#">
-				<?php echo $post['id'].'. '.$post['title'];?>
-			</a>
-		</li>
-		<?php endforeach; ?>
-	</ul>
 
-</body>
-</html>
+<!--<form action ="demo.asp">
+	Autor: <input type="text" name="fname"><br>
+	Title: <input type="text" name="fname"><br>
+	Content: <textarea name="content" col="20" rows="30"></textarea><br>
+	<input type="submit"   value="send">
+	-->
+<!--
+<form onSubmit="send_post.php" method="post">
+    <h3>Avtor:</h3>
+    <input type="text" name="avtor">
+    <h3>Title:</h3>
+    <input type="text" name="title">
+    <h3>Content</h3>
+    <textarea rows="20" cols="30" name="content"></textarea>
+    <input type="submit">
+</form>
+posthtml#form -->
+

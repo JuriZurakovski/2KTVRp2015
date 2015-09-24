@@ -9,12 +9,12 @@ function close_database_connection($link)
 {
 	mysql_close($link);
 }
-function get_all_posts(){
+function get_all_posts(){ //
 
 	$link=open_database_connection();
-	$sql="SELECT * FROM post";
+	$sql="SELECT * FROM post"; // vse zapisi 
 	$result=mysql_query($sql, $link);
-	$posts=array();
+	$posts=array(); // sozdajom pustoy massiv
 	while ($row=mysql_fetch_assoc($result)) 
 	{
 		$posts[]=$row;
