@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php 
-	echo $content;
+	echo $content;  ///izm. 4astj 
 ?>
 </body>
 </html>

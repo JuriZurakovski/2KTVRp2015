@@ -11,15 +11,31 @@ function close_database_connection($link)
 }
 function get_all_posts(){ //
 
-	$link=open_database_connection();
-	$sql="SELECT * FROM post"; // vse zapisi 
-	$result=mysql_query($sql, $link);
-	$posts=array(); // sozdajom pustoy massiv
+	$link=open_database_connection(); 
+	/**
+	*klu4 raboty s BD 
+	*/
+	$sql="SELECT * FROM post"; 
+	/**
+	*vse zapisi v bd
+	*/
+	$result=mysql_query($sql, $link); 
+	/**
+	*pomeshajem vyborku v bd
+	*/
+	$posts=array(); 
+	/**
+	*sozdajom pustoy massiv
+	*/
 	while ($row=mysql_fetch_assoc($result)) 
 	{
-		$posts[]=$row;
+		$posts[]=$row; 
+		/**
+		*analiz massiva
+		*
+		*/
 	}
 
-	close_database_connection($link);
-	return $posts;
+	close_database_connection($link); //zakon4ili rab s bd
+	return $posts; //sdali klu4
 }

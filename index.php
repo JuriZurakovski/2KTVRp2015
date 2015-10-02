@@ -1,9 +1,7 @@
 <?php
 
 	include_once 'Model/model.php';
-
-	$posts=get_all_posts();
-	require "View/Templates/list.php";	
+	include_once 'Controller/controller.php';
 ?>
 
 <!--<form action ="demo.asp">

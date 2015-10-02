@@ -6,7 +6,7 @@
 			foreach ($posts as $post):
 		?>
 		<li>
-			<a href="#">
+			<a href="/2KTVRp2015/index.php?id=<?php echo $post['id'];?>">
 				<?php echo $post['id'].'. '.$post['title'];?>
 			</a>
 		</li>
@@ -14,4 +14,4 @@
 	</ul>
 
 	<?php $content=ob_get_clean(); ?>
-	<?php include "View/layout.php";?>
+	<?php include "View/Templates/layout.php";?>
