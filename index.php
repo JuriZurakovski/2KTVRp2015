@@ -1,7 +1,10 @@
 <?php
+include_once 'Model/model.php';
+include_once "Controller/controller.php";
+include_once "Route/routing.php";
 
-	include_once 'Model/model.php';
-	include_once 'Controller/controller.php';
+	
+	
 ?>
 
 <!--<form action ="demo.asp">

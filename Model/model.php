@@ -9,7 +9,8 @@ function close_database_connection($link)
 {
 	mysql_close($link);
 }
-function get_all_posts(){ //
+function get_all_posts()
+{ //
 
 	$link=open_database_connection(); 
 	/**
@@ -23,19 +24,33 @@ function get_all_posts(){ //
 	/**
 	*pomeshajem vyborku v bd
 	*/
-	$posts=array(); 
-	/**
-	*sozdajom pustoy massiv
-	*/
-	while ($row=mysql_fetch_assoc($result)) 
-	{
-		$posts[]=$row; 
-		/**
-		*analiz massiva
-		*
-		*/
+	$posts=array();
+
+	while ($row=mysql_fetch_assoc($result)) {
+		$posts[]=$row;
+		# code...
 	}
 
 	close_database_connection($link); //zakon4ili rab s bd
 	return $posts; //sdali klu4
+}
+function get_post($id)
+{ //
+
+	$link=open_database_connection(); 
+	/**
+	*klu4 raboty s BD 
+	*/
+	$sql="SELECT * FROM post WHERE id='$id'"; 
+	/**
+	*vse zapisi v bd
+	*/
+	$result=mysql_query($sql, $link); 
+	/**
+	*pomeshajem vyborku v bd
+	*/
+	$post=mysql_fetch_assoc($result);
+
+	close_database_connection($link); //zakon4ili rab s bd
+	return $post; //sdali klu4
 }
