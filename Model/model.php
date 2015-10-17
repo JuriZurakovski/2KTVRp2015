@@ -54,3 +54,19 @@ function get_post($id)
 	close_database_connection($link); //zakon4ili rab s bd
 	return $post; //sdali klu4
 }
+	function add_post()
+	{
+		$avtor=$_REQUEST ['add_avtor'];
+		$data=date("Y-m-d H:i:s");
+		$content=$_REQUEST['add_content'];
+		$title=$_REQUEST['add_title'];
+
+		$link=open_database_connection();
+
+		$sql="INSERT INTO post ( avtor, date, title, content) 
+		VALUES ('$avtor','$date','$title','$content')";
+
+		$result=mysql_query($sql, $link); 
+
+		close_database_connection($link);
+	}

@@ -1,17 +1,18 @@
 <?php ob_start() ?>
 
 <h2>Администрирование странички</h2>
-<form action="index.php" method="POST" name="form1">
+<form action="add" method="POST" name="form1">
 
 	<table>
 		<tr>
 			<td>Avtor:</td>
 			<td><input type="text" name="add_avtor"></td>
 		</tr>
-		<tr>
+		<!--<tr>
 			<td>Data:</td>
 			<td><input type="text" name="add_date"></td>
 		</tr>
+		-->
 		<tr>
 			<td>Zagolovok:</td>
 			<td><input type="text" name="add_title"></td>

@@ -13,23 +13,45 @@
 	
 	function list_action()
 	{
+
 	$posts=get_all_posts();	
 	require "View/Templates/list.php";	//jesli ne vypolnitsja budet oshibka. Zagruzajet list.php		
 	}
    //prohozhdenije po massivu, rabota s kazhdoj strokoj, funcija controllera
 	function admin_action()
 	{
-		$posts=get_all_posts();		
-	require "View/Templates/admin.php";
+		//$posts=get_all_posts();	
+
+		require "View/Templates/admin.php";
 	}
-	function show_action ($id)
+	function get_action ($id)
 	{
 		$post=get_post($id);		
 	require "View/Templates/show.php";
 	}
-	function render_template ($path, array $args)
+	
+	function add_action($id)
+	{	
+			if(!empty($_POST['add_avtor']))
+				{
+					add_post();
+				}
+
+			$posts=get_all_posts();	
+			
+		require "View/Templates/admin.php";
+		require "View/Templates/list.php";
+
+	}
+	
+	function firmast_action ()
 	{
-		extract ($args);	
+		require "View/Templates/firmast.php";
+	}
+	function show_action($id)
+	{
+		$post=get_post($id);
+		require "View/Templates/show.php";
+
 	}
 
-?>

@@ -4,6 +4,7 @@ echo $_SERVER['REQUEST_URI'];
 
 	$u=explode('?',$uri);
 	$uri=$u[0];
+	$uri=rtrim($uri,"/");
 	echo "<br>newUri=".$uri;
 	if ($uri=='/2KTVRp2015/' OR $uri=='/2KTVRp2015/index.php')
 		{ 
@@ -15,7 +16,14 @@ echo $_SERVER['REQUEST_URI'];
 	}
 	elseif ('/2KTVRp2015/index.php/show' == $uri)
 	{
-		show_action($_REQUEST['id']);
+		get_action($_REQUEST['id']);
 	}
 
-	?>
+	elseif ('/2KTVRp2015/index.php/firmast' == $uri)
+	{
+		firmast_action();
+	}
+	elseif ('/2KTVRp2015/index.php/add' == $uri)
+	{
+		add_action();
+	}

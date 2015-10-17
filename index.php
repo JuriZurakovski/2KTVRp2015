@@ -1,12 +1,17 @@
 <?php
+
+
 include_once 'Model/model.php';
+
 include_once "Controller/controller.php";
+
 include_once "Route/routing.php";
 
 	
 	
-?>
-
+/*
+//error_reporting (E_ALL);
+//require_once 'vendor/autoload.php';
 <!--<form action ="demo.asp">
 	Autor: <input type="text" name="fname"><br>
 	Title: <input type="text" name="fname"><br>
@@ -24,4 +29,4 @@ include_once "Route/routing.php";
     <input type="submit">
 </form>
 posthtml#form -->
-
+*/
