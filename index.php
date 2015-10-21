@@ -7,7 +7,7 @@ include_once "Controller/controller.php";
 
 include_once "Route/routing.php";
 
-	
+echo $response;	
 	
 /*
 //error_reporting (E_ALL);

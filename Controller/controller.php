@@ -5,6 +5,14 @@
 * kotoryje zastavljajut modelj vyvesti nuzhnuju informaciju.
 *******************************************
 */
+	function render_template($path, array $args)
+	{							// obora4ivajet dannyje v html
+		extract ($args);
+		ob_start();
+		require $path;
+		$html = ob_get_clean();
+		return $html;
+	}
 
 /**
 * massiv $posts soderzhit vyborku vseh polej iz tablicy post
@@ -15,43 +23,53 @@
 	{
 
 	$posts=get_all_posts();	
-	require "View/Templates/list.php";	//jesli ne vypolnitsja budet oshibka. Zagruzajet list.php		
+	$html=render_template('View/Templates/list.php', array ('posts'=>$posts));
+	return $html;
+		
+		// reguire "View/Templates/list.php";
+		//jesli ne vypolnitsja budet oshibka. Zagruzajet list.php		
 	}
    //prohozhdenije po massivu, rabota s kazhdoj strokoj, funcija controllera
 	function admin_action()
 	{
-		//$posts=get_all_posts();	
-
-		require "View/Templates/admin.php";
+		$posts=get_all_posts();	
+				$html=render_template('View/Templates/admin.php', array ('posts'=>$posts));
+			return $html;
+		//require "View/Templates/admin.php";
 	}
 	function get_action ($id)
 	{
-		$post=get_post($id);		
-	require "View/Templates/show.php";
+		$post=get_post($id);
+				$html=render_template('View/Templates/admin.php', array ('post'=>$post));
+				return $html;		
+		//require "View/Templates/show.php";
 	}
 	
 	function add_action($id)
 	{	
-			if(!empty($_POST['add_avtor']))
-				{
-					add_post();
-				}
+		add_post();
 
-			$posts=get_all_posts();	
-			
-		require "View/Templates/admin.php";
-		require "View/Templates/list.php";
+		$posts=get_all_posts();	
+		$html=render_template('View/Templates/admin.php', array ('posts'=>$posts));
+		return $html;	
+		//require "View/Templates/show.php";
+		 // require "View/Templates/list.php";
 
 	}
 	
 	function firmast_action ()
 	{
-		require "View/Templates/firmast.php";
+		$html=render_template('View/Templates/firmast.php', array ());
+		return $html;
+		//require "View/Templates/firmast.php";
 	}
 	function show_action($id)
 	{
 		$post=get_post($id);
-		require "View/Templates/show.php";
+		
+		$html=render_template('View/Templates/show.php', array ('post'=>$post));
+		return $html;
+		//require "View/Templates/show.php";
 
 	}
 

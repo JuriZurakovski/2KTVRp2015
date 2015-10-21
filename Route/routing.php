@@ -6,24 +6,29 @@ echo $_SERVER['REQUEST_URI'];
 	$uri=$u[0];
 	$uri=rtrim($uri,"/");
 	echo "<br>newUri=".$uri;
-	if ($uri=='/2KTVRp2015/' OR $uri=='/2KTVRp2015/index.php')
+	if ($uri=='/2KTVRp2015' OR $uri=='/2KTVRp2015/index.php')
 		{ 
-			list_action();
+			$response=list_action();
+			//list_action();
 		}
 	elseif ($uri=='/2KTVRp2015/index.php/admin')
 	{
-		admin_action();
+		$response=admin_action();
+		//admin_action();
 	}
 	elseif ('/2KTVRp2015/index.php/show' == $uri)
 	{
-		get_action($_REQUEST['id']);
+		$response=show_action();
+		//get_action($_REQUEST['id']);
 	}
 
 	elseif ('/2KTVRp2015/index.php/firmast' == $uri)
 	{
-		firmast_action();
+		$response=firmast_action();
+		//irmast_action();
 	}
 	elseif ('/2KTVRp2015/index.php/add' == $uri)
 	{
-		add_action();
+		$response=add_action();
+		//add_action();
 	}

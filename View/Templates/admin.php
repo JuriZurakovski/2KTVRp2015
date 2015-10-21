@@ -8,11 +8,11 @@
 			<td>Avtor:</td>
 			<td><input type="text" name="add_avtor"></td>
 		</tr>
-		<!--<tr>
+		<tr>
 			<td>Data:</td>
-			<td><input type="text" name="add_date"></td>
+			<td><input type="text" name="add_date" value='<?php echo date("Y-m-d H:i:s"); ?>'></td>
 		</tr>
-		-->
+		
 		<tr>
 			<td>Zagolovok:</td>
 			<td><input type="text" name="add_title"></td>
@@ -28,5 +28,19 @@
 	</table>
 	</form>
 
+
+<h2>List of posts</h2>
+	<ul>
+		<?php
+			foreach ($posts as $post):
+		?>
+		<li>
+			<a href="/2KTVRp2015/index.php/show?id=<?php echo $post['id'];?>">
+				<?php echo $post['id'].'. '.$post['title'];?>
+			</a>
+		</li>
+		<?php endforeach; ?>
+	</ul>
+	
 	<?php $content=ob_get_clean(); ?>
 	<?php include "View/Templates/layout.php";?>
