@@ -35,8 +35,7 @@ function get_all_posts()
 	return $posts; //sdali klu4
 }
 function get_post($id)
-{ //
-
+{
 	$link=open_database_connection(); 
 	/**
 	*klu4 raboty s BD 
@@ -70,3 +69,22 @@ function get_post($id)
 
 		close_database_connection($link);
 	}
+	function remove_post ($id)
+{ 
+	$link=open_database_connection(); 
+	/**
+	*klu4 raboty s BD 
+	*/
+	$sql="DELETE FROM post WHERE id='$id'"; 
+	/**
+	*vse zapisi v bd
+	*/
+	$result=mysql_query($sql, $link); 
+	/**
+	*pomeshajem vyborku v bd
+	*/
+	$post=mysql_fetch_assoc($result);
+
+	close_database_connection($link); //zakon4ili rab s bd
+	return $post; //sdali klu4
+}

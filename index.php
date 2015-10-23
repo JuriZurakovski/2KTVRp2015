@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1); // '1'= true
 
 include_once 'Model/model.php';
 
@@ -9,7 +10,7 @@ include_once "Route/routing.php";
 
 echo $response;	
 	
-/*
+/*--
 //error_reporting (E_ALL);
 //require_once 'vendor/autoload.php';
 <!--<form action ="demo.asp">
@@ -29,4 +30,4 @@ echo $response;
     <input type="submit">
 </form>
 posthtml#form -->
-*/
+ -*/

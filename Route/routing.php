@@ -18,7 +18,7 @@ echo $_SERVER['REQUEST_URI'];
 	}
 	elseif ('/2KTVRp2015/index.php/show' == $uri)
 	{
-		$response=show_action();
+		$response=show_action($_REQUEST['id']);
 		//get_action($_REQUEST['id']);
 	}
 
@@ -30,5 +30,10 @@ echo $_SERVER['REQUEST_URI'];
 	elseif ('/2KTVRp2015/index.php/add' == $uri)
 	{
 		$response=add_action();
+		//add_action();
+	}
+	elseif ('/2KTVRp2015/index.php/remove' == $uri)
+	{
+		$response=remove_action($_REQUEST['id']);
 		//add_action();
 	}

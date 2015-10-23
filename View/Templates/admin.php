@@ -1,7 +1,7 @@
 <?php ob_start() ?>
 
 <h2>Администрирование странички</h2>
-<form action="add" method="POST" name="form1">
+<form action="/2KTVRp2015/index.php/add" method="POST" name="form1">
 
 	<table>
 		<tr>
@@ -26,7 +26,7 @@
 			<td><input type="submit" name="submit" value="SUBMIT"></td>
 		</tr>
 	</table>
-	</form>
+</form>
 
 
 <h2>List of posts</h2>
@@ -38,9 +38,15 @@
 			<a href="/2KTVRp2015/index.php/show?id=<?php echo $post['id'];?>">
 				<?php echo $post['id'].'. '.$post['title'];?>
 			</a>
+			<a href="/2KTVRp2015/index.php/remove?id=<?php echo $post['id'];?>"> Remove </a>
+			<a href="/2KTVRp2015/index.php/edit?id=<?php echo $post['id'];?>"> Edit</a>
 		</li>
+		
+
 		<?php endforeach; ?>
 	</ul>
 	
+	
+
 	<?php $content=ob_get_clean(); ?>
 	<?php include "View/Templates/layout.php";?>

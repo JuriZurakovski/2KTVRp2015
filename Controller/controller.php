@@ -73,3 +73,14 @@
 
 	}
 
+	function remove_action ($id)
+	{	
+		remove_post($id);
+
+		$posts=get_all_posts();	
+		$html=render_template('View/Templates/admin.php', array ('posts'=>$posts));
+		return $html;	
+		//require "View/Templates/show.php";
+		 // require "View/Templates/list.php";
+
+	}
