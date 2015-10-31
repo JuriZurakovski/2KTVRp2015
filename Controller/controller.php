@@ -84,3 +84,10 @@
 		 // require "View/Templates/list.php";
 
 	}
+	function edit_action ($id)
+	{	
+		edit_post($id);
+
+		$posts=get_all_posts();	
+		$html=render_template('View/Templates/admin.php', array ('posts'=>$posts));
+		return $html;

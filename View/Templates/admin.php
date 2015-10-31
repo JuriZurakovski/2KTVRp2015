@@ -39,7 +39,7 @@
 				<?php echo $post['id'].'. '.$post['title'];?>
 			</a>
 			<a href="/2KTVRp2015/index.php/remove?id=<?php echo $post['id'];?>"> Remove </a>
-			<a href="/2KTVRp2015/index.php/edit?id=<?php echo $post['id'];?>"> Edit</a>
+			<!--<a href="/2KTVRp2015/index.php/edit?id=<?php echo $post['id'];?>"> Edit</a> -->
 		</li>
 		
 

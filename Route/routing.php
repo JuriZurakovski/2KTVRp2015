@@ -25,7 +25,7 @@ echo $_SERVER['REQUEST_URI'];
 	elseif ('/2KTVRp2015/index.php/firmast' == $uri)
 	{
 		$response=firmast_action();
-		//irmast_action();
+		//firmast_action();
 	}
 	elseif ('/2KTVRp2015/index.php/add' == $uri)
 	{
@@ -36,4 +36,8 @@ echo $_SERVER['REQUEST_URI'];
 	{
 		$response=remove_action($_REQUEST['id']);
 		//add_action();
+	}
+	elseif ('/2KTVRp2015/index.php/edit' == $uri)
+	{
+		$response=edit_action($_REQUEST['id']);
 	}
