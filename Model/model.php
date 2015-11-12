@@ -26,7 +26,8 @@ function get_all_posts()
 	*/
 	$posts=array();
 
-	while ($row=mysql_fetch_assoc($result)) {
+	while ($row=mysql_fetch_assoc($result)) 
+	{
 		$posts[]=$row;
 		# code...
 	}
@@ -63,7 +64,7 @@ function get_post($id)
 		$link=open_database_connection();
 
 		$sql="INSERT INTO post ( avtor, date, title, content) 
-		VALUES ('$avtor','$date','$title','$content')";
+		VALUES ('$avtor','$data','$title','$content')";
 
 		$result=mysql_query($sql, $link); 
 
@@ -76,6 +77,32 @@ function get_post($id)
 	*klu4 raboty s BD 
 	*/
 	$sql="DELETE FROM post WHERE id='$id'"; 
+	/**
+	*vse zapisi v bd
+	*/
+	$result=mysql_query($sql, $link); 
+	/**
+	*pomeshajem vyborku v bd
+	*/
+	$post=mysql_fetch_assoc($result);
+
+	close_database_connection($link); //zakon4ili rab s bd
+	return $post; //sdali klu4
+}
+function edit_post ($id)
+
+{ 	
+		$avtor=$_REQUEST ['edit_avtor'];
+		$data=date("Y-m-d H:i:s");
+		$content=$_REQUEST['edit_content'];
+		$title=$_REQUEST['edit_title'];
+		
+	$link=open_database_connection(); 
+	/**
+	*klu4 raboty s BD 
+	*/
+	$sql="UPDATE FROM post (avtor, date, title, content) 
+		VALUES ('$avtor','$data','$title','$content') WHERE id='$id'"; 
 	/**
 	*vse zapisi v bd
 	*/

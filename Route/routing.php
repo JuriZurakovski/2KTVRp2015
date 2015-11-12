@@ -2,7 +2,7 @@
 echo $_SERVER['REQUEST_URI'];
 	$uri=$_SERVER['REQUEST_URI'];
 
-	$u=explode('?',$uri);
+	$u=explode('?',$uri); //Break a string into an array
 	$uri=$u[0];
 	$uri=rtrim($uri,"/");
 	echo "<br>newUri=".$uri;

@@ -21,8 +21,9 @@
 	
 	function list_action()
 	{
+		$model=new PostModel();
+	$posts=$model->get_all_posts();	
 
-	$posts=get_all_posts();	
 	$html=render_template('View/Templates/list.php', array ('posts'=>$posts));
 	return $html;
 		
@@ -45,7 +46,7 @@
 		//require "View/Templates/show.php";
 	}
 	
-	function add_action($id)
+	function add_action()
 	{	
 		add_post();
 
@@ -64,8 +65,8 @@
 		//require "View/Templates/firmast.php";
 	}
 	function show_action($id)
-	{
-		$post=get_post($id);
+	{	$model=new PostModel();
+		$post=$model->get_post_by_id($id);
 		
 		$html=render_template('View/Templates/show.php', array ('post'=>$post));
 		return $html;
@@ -91,3 +92,4 @@
 		$posts=get_all_posts();	
 		$html=render_template('View/Templates/admin.php', array ('posts'=>$posts));
 		return $html;
+	}
